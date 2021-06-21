@@ -2,12 +2,12 @@ package com.example.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
+import android.annotation.SuppressLint;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewTreeObserver;
+
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,60 +24,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private boolean ISpiece =  false;                  //是否要加（
     private boolean ISmanyzero = true;
     private String str;
-    private Button button_0;
-    private Button button_1;
-    private Button button_2;
-    private Button button_3;
-    private Button button_4;
-    private Button button_5;
-    private Button button_6;
-    private Button button_7;
-    private Button button_8;
-    private Button button_9;
-    private Button button_point;                    //"."
-    private Button button_add;
-    private Button button_reduce;
-    private Button button_multiply;
-    private Button button_divede;
-    private Button button_c;                        //"清除"
-    private Button button_del;                      //"删除"
-    private Button button_equals;
-    private Button button_leftparenthesis;          //"("
-    private Button button_rightparenthesis;         //")"
     private TextView textView_1;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
-
     }
 
     private void initView() {
-        button_0 = (Button)findViewById(R.id.button_0);
-        button_1 = (Button)findViewById(R.id.button_1);
-        button_2 = (Button)findViewById(R.id.button_2);
-        button_3 = (Button)findViewById(R.id.button_3);
-        button_4 = (Button)findViewById(R.id.button_4);
-        button_5 = (Button)findViewById(R.id.button_5);
-        button_6 = (Button)findViewById(R.id.button_6);
-        button_7 = (Button)findViewById(R.id.button_7);
-        button_8 = (Button)findViewById(R.id.button_8);
-        button_9 = (Button)findViewById(R.id.button_9);
-        button_point = (Button)findViewById(R.id.button_point);
-        button_add = (Button)findViewById(R.id.button_add);
-        button_reduce = (Button)findViewById(R.id.button_reduce);
-        button_multiply = (Button)findViewById(R.id.button_multiply);
-        button_divede = (Button)findViewById(R.id.button_divede);
-        button_c = (Button)findViewById(R.id.button_c);
-        button_del = (Button)findViewById(R.id.button_del);
-        button_equals = (Button)findViewById(R.id.button_equals);
-        button_leftparenthesis = (Button)findViewById(R.id.button_leftparenthesis);
-        button_rightparenthesis = (Button)findViewById(R.id.button_rightparenthesis);
-        textView_1 = (TextView)findViewById(R.id.TextView_1);
+        Button button_0 = findViewById(R.id.button_0);
+        Button button_1 = findViewById(R.id.button_1);
+        Button button_2 = findViewById(R.id.button_2);
+        Button button_3 = findViewById(R.id.button_3);
+        Button button_4 = findViewById(R.id.button_4);
+        Button button_5 = findViewById(R.id.button_5);
+        Button button_6 = findViewById(R.id.button_6);
+        Button button_7 = findViewById(R.id.button_7);
+        Button button_8 = findViewById(R.id.button_8);
+        Button button_9 = findViewById(R.id.button_9);
+        //"."
+        Button button_point = findViewById(R.id.button_point);
+        Button button_add = findViewById(R.id.button_add);
+        Button button_reduce = findViewById(R.id.button_reduce);
+        Button button_multiply = findViewById(R.id.button_multiply);
+        Button button_divede = findViewById(R.id.button_divede);
+        //"清除"
+        Button button_c = findViewById(R.id.button_c);
+        //"删除"
+        Button button_del = findViewById(R.id.button_del);
+        Button button_equals = findViewById(R.id.button_equals);
+        //"("
+        Button button_leftparenthesis = findViewById(R.id.button_leftparenthesis);
+        //")"
+        Button button_rightparenthesis = findViewById(R.id.button_rightparenthesis);
+        textView_1 = findViewById(R.id.TextView_1);
         button_0.setOnClickListener(this);
         button_1.setOnClickListener(this);
         button_2.setOnClickListener(this);
@@ -99,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button_leftparenthesis.setOnClickListener(this);
         button_rightparenthesis.setOnClickListener(this);
     }
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
         str = textView_1.getText().toString();
@@ -137,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         str += "0";
                         ISmanyzero = false;
                     }
-                    if(ISmanyzero==true) {
+                    if(ISmanyzero) {
                         if(str.length()==1&&str.charAt(0)=='0'){
                             ISmanyzero = false;
                             break;
@@ -258,7 +241,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     int len  = str.length()-1;
                     while(len>=0&&Character.isDigit(str.charAt(len)) ){
                         len--;
-                    };
+                    }
                     if(len>=0&&str.charAt(len)=='.')
                         break;
                     else {

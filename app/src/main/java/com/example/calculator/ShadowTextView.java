@@ -4,20 +4,15 @@ import android.content.Context;
 import android.graphics.Paint;
 import android.graphics.Paint.FontMetrics;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.view.ViewGroup.LayoutParams;
-import android.widget.TextView;
 
-public class ShadowTextView extends TextView {
 
-    private static float DEFAULT_MIN_TEXT_SIZE = 10;
-    private static float DEFAULT_MAX_TEXT_SIZE = 85;
+public class ShadowTextView extends androidx.appcompat.widget.AppCompatTextView {
 
     // Attributes
     private Paint testPaint;
     private float minTextSize, maxTextSize;
 
-    private String TAG = "ShadowTextView";
+    private final String TAG = "ShadowTextView";
     public ShadowTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
         initialise();
@@ -42,11 +37,13 @@ public class ShadowTextView extends TextView {
         // max size defaults to the intially specified text size unless it is
         // too small
         maxTextSize = this.getTextSize();
+        float DEFAULT_MAX_TEXT_SIZE = 85;
         if (maxTextSize <= DEFAULT_MAX_TEXT_SIZE) {
             maxTextSize = DEFAULT_MAX_TEXT_SIZE;
         }
+        float DEFAULT_MIN_TEXT_SIZE = 10;
         minTextSize = DEFAULT_MIN_TEXT_SIZE;
-    };
+    }
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,10 +15,10 @@
             android:id="@+id/TextView_1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textSize="80dp"
+            android:textSize="80sp"
             android:maxLines="3"
             android:gravity="bottom|right"
-            />
+            tools:ignore="RtlHardcoded" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,7 +34,10 @@
             android:layout_marginRight="7dp"
             android:textColor="#00CC00"
             android:background="@drawable/change1"
-            android:text="C"/>
+            android:text="@string/c"
+            tools:ignore="NestedWeights"
+            android:layout_marginEnd="7dp"
+            style="?android:attr/buttonBarButtonStyle" />
         <Button
             android:id="@+id/button_divede"
             android:layout_width="0dp"
@@ -42,7 +46,8 @@
             android:layout_marginRight="7dp"
             android:textColor="#00CC00"
             android:background="@drawable/change1"
-            android:text="/"/>
+            android:text="@string/divide"
+            android:layout_marginEnd="7dp" />
         <Button
             android:id="@+id/button_multiply"
             android:layout_width="0dp"
@@ -51,7 +56,8 @@
             android:textColor="#00CC00"
             android:layout_marginRight="7dp"
             android:background="@drawable/change1"
-            android:text="*"/>
+            android:text="@string/multiply"
+            android:layout_marginEnd="7dp" />
         <Button
             android:id="@+id/button_del"
             android:layout_width="0dp"
@@ -59,7 +65,7 @@
             android:layout_weight="1"
             android:textColor="#00CC00"
             android:background="@drawable/change1"
-            android:text="Del"/>
+            android:text="@string/del"/>
 
     </LinearLayout>
     <LinearLayout
@@ -75,7 +81,10 @@
             android:layout_weight="1"
             android:background="@drawable/change"
             android:layout_marginRight="7dp"
-            android:text="7"/>
+            android:text="@string/_7"
+            tools:ignore="NestedWeights"
+            android:layout_marginEnd="7dp"
+            style="?android:attr/buttonBarButtonStyle" />
         <Button
             android:id="@+id/button_8"
             android:layout_width="0dp"
@@ -83,7 +92,9 @@
             android:layout_weight="1"
             android:background="@drawable/change"
             android:layout_marginRight="7dp"
-            android:text="8"/>
+            android:text="@string/_8"
+            android:layout_marginEnd="7dp"
+            style="?android:attr/buttonBarButtonStyle" />
         <Button
             android:id="@+id/button_9"
             android:layout_width="0dp"
@@ -91,7 +102,9 @@
             android:layout_weight="1"
             android:layout_marginRight="7dp"
             android:background="@drawable/change"
-            android:text="9"/>
+            android:text="@string/_9"
+            android:layout_marginEnd="7dp"
+            style="?android:attr/buttonBarButtonStyle" />
         <Button
             android:id="@+id/button_reduce"
             android:layout_width="0dp"
@@ -99,7 +112,8 @@
             android:layout_weight="1"
             android:textColor="#00cc00"
             android:background="@drawable/change1"
-            android:text="-"/>
+            android:text="@string/minus"
+            style="?android:attr/buttonBarButtonStyle" />
 
     </LinearLayout>
     <LinearLayout
@@ -114,7 +128,10 @@
             android:layout_weight="1"
             android:layout_marginRight="7dp"
             android:background="@drawable/change"
-            android:text="4"/>
+            android:text="@string/_4"
+            android:layout_marginEnd="7dp"
+            style="?android:attr/buttonBarButtonStyle"
+            tools:ignore="NestedWeights" />
         <Button
             android:id="@+id/button_5"
             android:layout_width="0dp"
@@ -122,7 +139,8 @@
             android:layout_weight="1"
             android:layout_marginRight="7dp"
             android:background="@drawable/change"
-            android:text="5"/>
+            android:text="@string/_5"
+            android:layout_marginEnd="7dp" />
         <Button
             android:id="@+id/button_6"
             android:layout_width="0dp"
@@ -130,7 +148,8 @@
             android:layout_weight="1"
             android:layout_marginRight="7dp"
             android:background="@drawable/change"
-            android:text="6"/>
+            android:text="@string/_6"
+            android:layout_marginEnd="7dp" />
         <Button
             android:id="@+id/button_add"
             android:layout_width="0dp"
@@ -138,7 +157,7 @@
             android:layout_weight="1"
             android:textColor="#00FF00"
             android:background="@drawable/change1"
-            android:text="+"/>
+            android:text="@string/plus"/>
 
     </LinearLayout>
     <LinearLayout
@@ -153,7 +172,8 @@
             android:layout_weight="1"
             android:layout_marginRight="7dp"
             android:background="@drawable/change"
-            android:text="1"/>
+            android:text="@string/_1"
+            android:layout_marginEnd="7dp" />
         <Button
             android:id="@+id/button_2"
             android:layout_width="0dp"
@@ -161,7 +181,8 @@
             android:layout_weight="1"
             android:layout_marginRight="7dp"
             android:background="@drawable/change"
-            android:text="2"/>
+            android:text="@string/_2"
+            android:layout_marginEnd="7dp" />
         <Button
             android:id="@+id/button_3"
             android:layout_width="0dp"
@@ -169,7 +190,8 @@
             android:layout_weight="1"
             android:layout_marginRight="7dp"
             android:background="@drawable/change"
-            android:text="3"/>
+            android:text="@string/_3"
+            android:layout_marginEnd="7dp" />
         <Button
             android:id="@+id/button_point"
             android:layout_width="0dp"
@@ -177,7 +199,7 @@
             android:layout_weight="1"
             android:background="@drawable/change1"
             android:textColor="#00CC00"
-            android:text="."/>
+            android:text="@string/point"/>
 
     </LinearLayout>
     <LinearLayout
@@ -193,7 +215,8 @@
             android:layout_marginRight="7dp"
             android:background="@drawable/change1"
             android:textColor="#00CC00"
-            android:text="("/>
+            android:text="@string/left_bracket"
+            android:layout_marginEnd="7dp" />
         <Button
             android:id="@+id/button_0"
             android:layout_width="0dp"
@@ -201,7 +224,8 @@
             android:layout_weight="1"
             android:layout_marginRight="7dp"
             android:background="@drawable/change"
-            android:text="0"/>
+            android:text="@string/_0"
+            android:layout_marginEnd="7dp" />
         <Button
             android:id="@+id/button_rightparenthesis"
             android:layout_width="0dp"
@@ -210,7 +234,8 @@
             android:textColor="#00CC00"
             android:layout_marginRight="7dp"
             android:background="@drawable/change1"
-            android:text=")"/>
+            android:text="@string/right_parenthesis"
+            android:layout_marginEnd="7dp" />
         <Button
             android:id="@+id/button_equals"
             android:layout_width="0dp"
@@ -218,7 +243,7 @@
             android:layout_weight="1"
             android:textColor="#00CC00"
             android:background="@drawable/change1"
-            android:text="="/>
+            android:text="@string/equals"/>
 
     </LinearLayout>
 
